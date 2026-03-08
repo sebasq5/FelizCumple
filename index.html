@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Platformer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- Game Canvas (960x540) -->
+        <canvas id="gameCanvas" width="960" height="540"></canvas>
+
+        <!-- UI Overlays corresponding to GameStates -->
+        <div id="ui-menu" class="overlay active">
+            <div class="panel">
+                <h1>XXI cumpleaños de Dana</h1>
+                <p>Usa <b>W A D</b> o las <b>Flechitas ↑ ← →</b> para moverte y <b>SPACE</b> para lanzar rocas. (CI,
+                    espero te guste el juego uwu)</p>
+                <div class="loading-bar-container">
+                    <div id="loading-bar"></div>
+                </div>
+                <p id="loading-text">Cargando cosillas...</p>
+                <button id="start-btn" class="hidden">Jugar</button>
+            </div>
+        </div>
+
+        <div id="ui-dialog" class="overlay hidden">
+            <div class="dialog-box">
+                <p id="dialog-text">Mensaje...</p>
+                <p class="blink hint">Presiona ENTER para continuar</p>
+            </div>
+        </div>
+
+        <div id="ui-gameover" class="overlay hidden">
+            <div class="panel">
+                <h2>Game Over</h2>
+                <p id="gameover-phrase">No te rindas, ¡puedes hacerlo!</p>
+                <button id="restart-btn">Volver a Intentar</button>
+            </div>
+        </div>
+
+        <!-- BIRTHDAY WIN SCREEN -->
+        <div id="ui-finished" class="overlay hidden">
+            <div class="panel win-panel">
+                <div id="final-sequence">
+                    <p class="seq-msg hidden" id="msg-0">Este juego era solo para decirte algo...</p>
+                    <h1 class="seq-msg hidden surprise" id="msg-1">¡Feliz Cumpleaños! 🎂🔥</h1>
+                    <div class="seq-msg hidden birthday-letter" id="msg-2">
+                        <div style="text-align:center; margin-bottom: 16px;">
+                            <img src="assets/standing_character.png" alt="personaje"
+                                style="height: 96px; image-rendering: pixelated; filter: drop-shadow(0 0 8px #ff99ff);">
+                        </div>
+                        <p>hola danita, que tengas un hermoso día como tu, o noshe x si sigues despierta, se que eres
+                            una mushasha, super hermosa, increible, bonita, y sha, eres musho, eres una chica
+                            simplemente que todo mundo desea la verdad, eres una chica buena, que ama los animalitos,
+                            que tiene su flow que es tan guao, tienes pinta, y eso es algo super hermosho, todo contigo
+                            es increible, que incluso si tu dices para salir a las 6, yo soy feliz apartir de las 5, tu
+                            corazon vale mucho, tu vales mucho y tienes una alma bonita, te mereces todo del mundo, y no
+                            solo de este, de todos los multiversos, y polfavol echale ganitas a tus cositas, yo sé que
+                            lo vas a lograr, y yo se que tu también pero goo, tu puedes, tal vez este año no fue el
+                            mejor o peor, i don't know solo sé que cada vez que pase el tiempo estas más cerca a tu
+                            muerte jijiji, tal vez este jueguito fue corto, pero lo hice con cariño y un poquito de
+                            esfuerzo jeje, lo hice en base a tu color favorito, y sha, este es tu otra parte de cumple
+                            del jueves jeje, y boom las escarchas botadas JKDJSDKJDK aun ha de ver jeje para el
+                            recuerdo, espero hayas pasado todo wonito ese día, te mereces eso y mas, de mi parte eso es
+                            todo danita, se te adora musho ❤️</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HUD Layer -->
+        <div id="hud" class="hidden">
+            <div class="lives" id="lives-container">
+                <!-- Hearts will be injected here via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
