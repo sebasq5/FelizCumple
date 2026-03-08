@@ -9,6 +9,35 @@
 </head>
 
 <body>
+    <!-- Mobile/Tablet Block Screen -->
+    <div id="mobile-block" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+        background: #1a0033; z-index: 9999; justify-content: center; align-items: center;
+        flex-direction: column; text-align: center; padding: 40px; box-sizing: border-box;">
+        <div style="font-size: 60px; margin-bottom: 24px;">🙅‍♀️</div>
+        <h2
+            style="color:#ff99ff; font-family:'Press Start 2P',monospace; font-size:18px; line-height:1.8; margin-bottom:20px;">
+            no valeee<br>solo pc
+        </h2>
+        <p style="color:#c9a0ff; font-family:'Press Start 2P',monospace; font-size:10px; line-height:2;">
+            modo no cell<br>
+            haga caso uwu<br>
+            y disfrute jeje
+        </p>
+    </div>
+
+    <script>
+        // Block phones and tablets
+        const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|Tablet/i.test(navigator.userAgent)
+            || navigator.maxTouchPoints > 1 && window.innerWidth < 1024;
+        if (isMobile) {
+            document.getElementById('mobile-block').style.display = 'flex';
+            document.addEventListener('DOMContentLoaded', () => {
+                const gc = document.getElementById('game-container');
+                if (gc) gc.style.display = 'none';
+            });
+        }
+    </script>
+
     <div id="game-container">
         <!-- Game Canvas (960x540) -->
         <canvas id="gameCanvas" width="960" height="540"></canvas>
